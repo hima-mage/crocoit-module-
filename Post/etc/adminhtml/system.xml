@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="posts" translate="label" sortOrder="1000">
+            <label>posts</label>
+        </tab>
+        <section id="posts" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>posts</label>
+            <tab>posts</tab>
+            <resource>Crocoit_Post::posts</resource>
+            <group id="department" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Department configuration</label>
+                <field id="view_list" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show post list</label>
+                    <comment>Show department's post list of the viewing department</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+       </section>
+    </system>
+</config>

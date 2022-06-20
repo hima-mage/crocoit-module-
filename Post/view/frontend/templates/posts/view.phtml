@@ -1,0 +1,31 @@
+<?php 
+$post = $this->getLoadedPost();
+// $department = $this->getLoadedDepartment();
+?>
+<?php if($post->getId()) : ?>
+    <div class="post-view-wrapper">
+        <div class="title"> 
+            <?php echo $post->getTitle(); ?> 
+        </div> 
+        <div class="department_name">
+        <?php echo __('Departments : ');   
+                $departments = $this->getLoadedDepartment();
+                if(empty( $departments) )
+                    echo 'none';
+                else { 
+                    foreach($departments AS $department){ 
+                        ?> 
+                        <a href="<?php echo $this->getDepartmentUrl($department); ?>" title="<?php echo $department['name']; ?>">
+                            <?php echo $department['name']; ?>
+                        </a>
+                        <?php 
+                    }
+                } 
+            ?>
+            
+        </div> 
+        <div class="description"><?php echo $post->getContent(); ?></div>
+    </div>
+<?php else : ?>
+    <?php echo __('This post does not exist'); ?>
+<?php endif; ?>

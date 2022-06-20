@@ -1,0 +1,49 @@
+<?php
+
+    // $_getDepartmentPostsCollectionResult = $this->_getDepartmentPostsCollection();
+    // print_r($_getDepartmentPostsCollectionResult);
+    // die();
+  
+    $postCollection = $this->getLoadedPostCollection();
+    $iterator = 1;
+    $total = $postCollection->count();
+
+  
+
+   
+?>
+ 
+<div class="job-wrapper">
+    <ol class="posts list">
+<?php foreach($postCollection AS $post): ?>
+    <li class="item<?php echo ($iterator == 1) ? ' first' : ''; ?><?php echo ($total == $iterator) ? ' last' : ''; ?>">
+        <div class="title">
+            <a href="<?php echo $this->getPostUrl($post); ?>" title="<?php echo $post->getTitle(); ?>">
+                <?php echo $post->getTitle(); ?>
+            </a>
+        </div> 
+        <div> 
+        </div>
+        <div class="department_name">
+            <?php echo __('Departments : ');   
+                $departments = $this->_getDepartmentCollection($post);
+                if(empty( $departments) )
+                    echo 'none';
+                else { 
+                    foreach($departments AS $department){ 
+                        ?> 
+                        <a href="<?php echo $this->getDepartmentUrl($department); ?>" title="<?php echo $department['name']; ?>">
+                            <?php echo $department['name']; ?>
+                        </a>
+                        <?php 
+                    }
+                } 
+            ?>
+             
+        </div>
+        <div class="description"><?php echo $post->getContent(); ?></div>
+    </li>
+    <?php $iterator++; ?>
+<?php endforeach; ?>
+    </ol>
+</div>

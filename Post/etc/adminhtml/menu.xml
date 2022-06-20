@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Crocoit_Post::post_head" title="Posts" module="Crocoit_Post" sortOrder="100"  resource="Crocoit_Post::post_head" />
+        <add id="Crocoit_Post::department" title="Departments" module="Crocoit_Post" sortOrder="10" parent="Crocoit_Post::post_head" action="posts/department" resource="Crocoit_Post::post" />
+        <add id="Crocoit_Post::post" title="Posts" module="Crocoit_Post" sortOrder="20" parent="Crocoit_Post::post_head" action="posts/post" resource="Crocoit_Post::post" />
+    </menu>
+</config>
