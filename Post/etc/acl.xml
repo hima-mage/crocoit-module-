@@ -19,7 +19,7 @@
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
-                            <resource id="Crocoit_Post::post" title="posts Section" />
+                            <resource id="Crocoit_Post::posts" title="posts Section" />
                         </resource>
                     </resource>
                 </resource>

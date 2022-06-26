@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job name="crocoit_post_disable_posts" instance="Crocoit\Post\Cron\DisablePosts" method="execute">
+            <!-- Every five minutes -->
+            <schedule>*/5 * * * *</schedule>
+            <!--<config_path>posts/cron/schedule</config_path>-->
+        </job>
+    </group>
+</config>

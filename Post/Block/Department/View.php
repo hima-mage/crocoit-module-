@@ -13,6 +13,8 @@ class View extends \Magento\Framework\View\Element\Template
     protected $_resource;
 
     const LIST_POSTS_ENABLED = 'posts/department/view_list';
+
+    protected $_helper;
  
     /**
      * @param \Magento\Framework\View\Element\Template\Context $context
@@ -26,12 +28,14 @@ class View extends \Magento\Framework\View\Element\Template
         \Crocoit\Post\Model\Department $department,
         \Crocoit\Post\Model\Post $post,
         \Magento\Framework\App\ResourceConnection $resource,
+        \Maxime\Jobs\Helper\Data $helper,
         array $data = []
     ) {
         $this->_department = $department;
  
         $this->_post = $post;
         $this->_resource = $resource;
+        $this->_helper = $department;
  
         parent::__construct(
             $context,
@@ -136,9 +140,6 @@ class View extends \Magento\Framework\View\Element\Template
     }
 
     public function getConfigListPosts() {
-        return $this->_scopeConfig->getValue(
-            self::LIST_POSTS_ENABLED,
-            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
-        );
+        return $this->_helper->getListJobEnabled();
     }
 }
