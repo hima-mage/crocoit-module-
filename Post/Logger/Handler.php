@@ -15,5 +15,5 @@ class Handler extends \Magento\Framework\Logger\Handler\Base
      * File name
      * @var string
      */
-    protected $fileName = '/var/log/Crocoit_Post.log';
+    protected $fileName = '/var/log/crocoit_post.log';
 }

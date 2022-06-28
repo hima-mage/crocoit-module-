@@ -24,6 +24,8 @@ class View extends \Magento\Framework\App\Action\Action
  
     public function execute()
     {
+
+        
         // Get param id
         $id = $this->getRequest()->getParam('id');
         $model = $this->_model;
@@ -40,7 +42,7 @@ class View extends \Magento\Framework\App\Action\Action
             $resultRedirect = $this->resultRedirectFactory->create();
             return $resultRedirect->setPath('*/*/');
         }
- 
+        
         $this->_view->loadLayout();
         $this->_view->getLayout()->initMessages();
         $this->_view->renderLayout();

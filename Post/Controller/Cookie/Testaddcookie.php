@@ -37,7 +37,7 @@ class Testaddcookie extends \Magento\Framework\App\Action\Action
     {
         $metadata = $this->_cookieMetadataFactory
             ->createPublicCookieMetadata()
-            ->setDuration(self::JOB_COOKIE_DURATION);
+            ->setDuration(self::Post_COOKIE_DURATION);
  
         $this->_cookieManager->setPublicCookie(
             self::Post_COOKIE_NAME,

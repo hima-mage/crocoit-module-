@@ -8,3 +8,14 @@
         </job>
     </group>
 </config>
+
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="Crocoit_Post">
+        <job name="crocoit_post_disable_posts" instance="Crocoit\Post\Cron\DisablePosts" method="execute">
+            <!-- Configuration expression -->
+            <config_path>jobs/cron/schedule</config_path>
+            <!--<schedule>*/5 * * * *</schedule>-->
+        </job>
+    </group>
+</config>

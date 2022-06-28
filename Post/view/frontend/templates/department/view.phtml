@@ -1,9 +1,10 @@
 <?php
+
 $department = $this->getLoadedDepartment(); 
-if($this->getConfigListJobs()){
+if($this->getConfigListPosts()){
     $postCollection = $this->getLoadedPostsCollection();
     $iterator = 1;
-    $total = $jobCollection->count();
+    $total = count($postCollection); 
 } else {
     $total = 0;
 }

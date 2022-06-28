@@ -38,5 +38,13 @@ class Post extends AbstractModel
         $this->_init('Crocoit\Post\Model\ResourceModel\Post');
     }
 
+    public function getEnableStatus() {
+        return 1;
+    }
+     
+    public function getDisableStatus() {
+        return 0;
+    }
+
     
 }

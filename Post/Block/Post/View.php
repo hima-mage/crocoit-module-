@@ -8,6 +8,7 @@ class View extends \Magento\Framework\View\Element\Template
     protected $_department;
  
     protected $_resource;
+    
 
     /**
      * @param \Magento\Framework\View\Element\Template\Context $context

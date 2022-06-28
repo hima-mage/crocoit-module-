@@ -87,5 +87,20 @@
         </arguments>
     </type>
 
+ 
+    <type name="Crocoit\Post\Logger\Handler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="Crocoit\Post\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">crocoitpost</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Crocoit\Post\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+
 </config>
 

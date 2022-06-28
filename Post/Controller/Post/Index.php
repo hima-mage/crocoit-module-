@@ -17,13 +17,9 @@ class Index extends \Magento\Framework\App\Action\Action
     protected $_logger;
 
     public function __construct(
-        Context $context, 
-        PostFactory $_postFactory,
-        \Crocoit\Crocoit\Logger\Logger $logger
+        Context $context,  
     ) {
-        parent::__construct($context);
-        $this->_postFactory = $_postFactory;
-        $this->_logger = $logger;
+        parent::__construct($context); 
     }
     
     public function execute()

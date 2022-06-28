@@ -33,7 +33,7 @@ class DisablePosts
         $postsCollection = $this->_post->getCollection()
             ->addFieldToFilter('date', array ('lt' => $nowDate));
  
-        foreach($jobsCollection AS $post) {
+        foreach($postsCollection AS $post) {
             $post->setStatus($post->getDisableStatus());
             $post->save();
         }

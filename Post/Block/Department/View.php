@@ -10,9 +10,7 @@ class View extends \Magento\Framework\View\Element\Template
  
     protected $_post;
 
-    protected $_resource;
-
-    const LIST_POSTS_ENABLED = 'posts/department/view_list';
+    protected $_resource; 
 
     protected $_helper;
  
@@ -28,14 +26,14 @@ class View extends \Magento\Framework\View\Element\Template
         \Crocoit\Post\Model\Department $department,
         \Crocoit\Post\Model\Post $post,
         \Magento\Framework\App\ResourceConnection $resource,
-        \Maxime\Jobs\Helper\Data $helper,
+        \Crocoit\Post\Helper\Data $helper,
         array $data = []
     ) {
         $this->_department = $department;
  
         $this->_post = $post;
         $this->_resource = $resource;
-        $this->_helper = $department;
+        $this->_helper = $helper;
  
         parent::__construct(
             $context,
@@ -139,7 +137,7 @@ class View extends \Magento\Framework\View\Element\Template
         return $this->getUrl('posts/post/view', ['id' => $post['entity_id']]);
     }
 
-    public function getConfigListPosts() {
-        return $this->_helper->getListJobEnabled();
+    public function getConfigListPosts() { 
+        return $this->_helper->getListPostEnabled();
     }
 }
