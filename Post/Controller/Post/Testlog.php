@@ -17,7 +17,7 @@ class Testlog extends \Magento\Framework\App\Action\Action
      */
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
-        \Crocoit\Post\Logger\Logger $logger
+        \Psr\Log\LoggerInterface $logger
     )
     {
         $this->_logger = $logger;
@@ -36,7 +36,7 @@ class Testlog extends \Magento\Framework\App\Action\Action
         // $this->_logger->addEmergency('My emergency log');
  
         $this->_logger->debug('Error message', ['exception' => 'e']);
-        $this->_logger->info('Error message', ['exception' => 'e']);
+        $this->_logger->info('info message', ['exception' => 'e']);
 
         $this->_view->loadLayout();
         $this->_view->getLayout()->initMessages();
